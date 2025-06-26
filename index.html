@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="game2.css" />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container-game">
+      <div class="game-title">HOME</div>
+
+      <div class="game-body"></div>
+      <div class="option">
+        <div>
+          <button id="continue-game-button" onclick="bukaHalamanGame()">
+            Continue
+          </button>
+
+          <div>Atau main sebagai player baru</div>
+
+          <div class="container-new-game">
+            <input
+              type="text"
+              id="player-name-input"
+              placeholder="Masukkan nama player"
+            />
+
+            <button id="mulai-game-botton" onclick="mulaiGameBaru()">
+              Start
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="feedback-message"></div>
+
+    <script src="common.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

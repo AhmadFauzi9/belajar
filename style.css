@@ -1,0 +1,185 @@
+:root {
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --dark: #111827;
+  --light: #f9fafb;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, Roboto, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+header {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1.25rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+.hamburger {
+  display: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  text-align: center;
+  background: white;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.75rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.125rem;
+  color: #374151;
+}
+.cta-btn {
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 9999px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+#bahasa {
+  display: flex; /* Menjadikan wadah sebagai flex container */
+  justify-content: center; /* Pusatkan secara horizontal */
+  align-items: center; /* Pusatkan secara vertikal */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.25rem;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+.card-icon {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+footer {
+  margin-top: auto;
+  background: var(--dark);
+  color: #d1d5db;
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.875rem;
+}
+.mulai {
+  background: var(--secondary);
+  color: white;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  nav ul.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav li {
+    margin-bottom: 0.75rem;
+  }
+  .hamburger {
+    display: block;
+  }
+}

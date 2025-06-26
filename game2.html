@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game2.css" />
+    <link rel="stylesheet" href="common.css" />
+
+    <title>Game Tebak Gambar</title>
+  </head>
+  <body>
+    <div class="container-game">
+      <div class="game-title">GAME TEBAK GAMBAR</div>
+
+      <div class="game-body">
+        <div class="container-gambar">
+          <canvas id="canvas" width="500" height="310"></canvas>
+
+          <h1 id="winner"></h1>
+          <h1 id="gameover"></h1>
+
+          <img
+            id="champion-gif"
+            height="360"
+            src="https://i.pinimg.com/originals/a5/da/be/a5dabea9202dcfef09cb11340fd86192.gif"
+            alt="Champion"
+          />
+
+          <div class="container-input">
+            <input type="text" id="tebakan" placeholder="Masukkan Tebakanmu" />
+            <button onclick="masukkanJawaban()" id="tombol">Tebak</button>
+          </div>
+        </div>
+
+        <div class="container-statistik">
+          <div class="judul-statistik">
+            Statistics
+
+            <div id="player-name">
+              <span>---. </span>player<span> .---</span>
+            </div>
+          </div>
+
+          <div class="label-statistik">
+            <div>
+              <div class="label">Score</div>
+              <div class="poin" id="skor">0</div>
+            </div>
+
+            <div>
+              <div class="label">High Score</div>
+              <div class="poin" id="high-score">0</div>
+            </div>
+
+            <div>
+              <div class="label">Level</div>
+              <div class="poin" id="level">1</div>
+            </div>
+
+            <div>
+              <div class="label">High Level</div>
+              <div class="poin" id="high-level">0</div>
+            </div>
+
+            <div class="nyawa-baris">
+              <div class="label">Nyawa</div>
+              <div class="poin" id="nyawa">💖💖💖</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="feedback-message"></div>
+
+    <script src="common.js"></script>
+    <script src="game2.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

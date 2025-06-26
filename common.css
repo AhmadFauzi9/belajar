@@ -1,0 +1,36 @@
+body {
+  font-family: "Verdana", sans-serif;
+  background: linear-gradient(-35deg, #04616d, #05193f);
+  text-align: center;
+  padding: 20px;
+  border: 0px;
+  color: #3d3d3d;
+}
+
+.container-game {
+  background-image: url("https://images.pexels.com/photos/7130565/pexels-photo-7130565.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 20px auto;
+  padding-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.game-title {
+  background-color: #f0f0f0;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.game-body {
+  display: flex;
+  margin: 10px;
+}
+
+.game-body > div {
+  flex: auto;
+}

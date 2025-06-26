@@ -1,0 +1,224 @@
+.container-gambar {
+  flex: auto;
+  position: relative;
+  height: 390px;
+  border-radius: 20px;
+  margin: 15px;
+  background-color: #e1e1e180;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-input {
+  display: flex;
+  height: 40px;
+  margin: 15px;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: white;
+}
+
+#tebakan {
+  flex: auto;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  padding: 20px;
+}
+
+#tombol {
+  text-align: center;
+  font-size: 1em;
+  width: 85px;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #292929;
+  background: linear-gradient(#ffffff, #afafaf);
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background: linear-gradient(#ffffff, #afafaf);
+  color: #666;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background: linear-gradient(#ffffff, #afafaf);
+  color: #666;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background: linear-gradient(#eee, #666);
+  color: #292929;
+  transition: background-color 0.3s ease;
+}
+
+.container-statistik {
+  width: 40%;
+}
+
+.judul-statistik {
+  font-family: "Noto", serif;
+  font-size: 2em;
+  margin: 30px auto;
+  font-weight: lighter;
+  color: #f0f0f0;
+  letter-spacing: 0.2em;
+}
+
+#player-name {
+  font-size: 0.7em;
+  letter-spacing: normal;
+}
+
+.label-statistik > div {
+  display: flex;
+  overflow: hidden;
+  border-radius: 25px;
+  text-align: left;
+  margin: 10px;
+  margin-right: 25px;
+  background-color: #f0f0f0;
+}
+
+.label-statistik .label {
+  background-color: #f0f0f0;
+  width: 40%;
+  padding: 10px;
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.label-statistik .poin {
+  flex: auto;
+  background-color: #cecece;
+  padding: 10px;
+  padding-left: 15px;
+  color: #019e23;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.label-statistik #high-score,
+#high-level {
+  color: #ce1d1d;
+}
+
+#gameover,
+#winner {
+  font-size: 3em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px auto;
+}
+
+#champion-gif {
+  display: none;
+  position: absolute;
+  transform: translateX(-50%);
+  pointer-events: none;
+  left: 50%;
+}
+
+#gameover {
+  color: #ce1d1d;
+}
+
+#winner {
+  color: #1dce43;
+}
+
+#feedback-message {
+  display: block;
+  width: 550px;
+  font-weight: bold;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: none;
+}
+
+.correct {
+  background-color: #0ea04b;
+  color: #f0f0f0;
+}
+
+.incorrect {
+  background-color: #ce1d1d;
+  color: #f0f0f0;
+}
+
+@media only screen and (max-width: 600px) {
+  .container-game {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .game-body {
+    display: block;
+  }
+
+  .game-body > div {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .container-statistik {
+    display: block;
+  }
+
+  .judul-statistik {
+    text-align: center;
+    letter-spacing: normal;
+    margin: 10px auto;
+  }
+
+  .label-statistik {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .label-statistik > div {
+    flex-direction: column;
+    padding: 0;
+    margin: 5px;
+  }
+
+  .label-statistik .label {
+    font-size: 0.8em;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .label-statistik .poin {
+    font-size: 2.5em;
+    text-align: center;
+    padding: 5px;
+    font-style: italic;
+  }
+
+  .label-statistik #nyawa {
+    font-style: normal;
+  }
+
+  .nyawa-baris {
+    grid-column: 1 / -1;
+    flex-direction: column;
+  }
+}
