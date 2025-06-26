@@ -41,20 +41,27 @@ let skor = 0;
 let level = 0;
 let nyawa = 3;
 let nilaiBlur = 5;
+let playerName = "";
+
+const namaPlayer = document.getElementById("player-name");
 
 const session = loadSession();
 if (session !== null) {
-  skor = session.currentSkor;
-  level = session.currentLevel;
-  nyawa = session.currentNyawa;
-  nilaiBlur = session.currentBlur;
+  playerName = session.playerName;
+  skor = session.skor;
+  level = session.level;
+  nyawa = session.nyawa;
+  nilaiBlur = session.nilaiBlur;
+  logos[level].blur = nilaiBlur; // PENTING: Set blur pada objek logo saat ini
+
+  namaPlayer.textContent = playerName;
 }
 
 const highScore = localStorage.getItem("highScore");
 const highLevel = localStorage.getItem("highLevel");
 if (highScore !== null || highLevel !== null) {
   document.getElementById("high-score").textContent = highScore;
-  document.getElementById("high-level").textContent = highLevel;
+  document.getElementById("high-level").textContent = parseInt(highLevel) + 1;
 }
 
 updateGame();
@@ -63,7 +70,9 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.filter = `blur(${logos[level].blur}px)`;
 
-const feedbackMessageDiv = document.getElementById("feedback-message");
+// sudah dideklarasikan secara global
+// dan diinisialisasi dengan DOMContentLoaded di common.js
+// const feedbackMessageDiv = document.getElementById("feedback-message");
 
 const img = new Image();
 img.src = logos[level].gambar;
@@ -91,7 +100,9 @@ function masukkanJawaban() {
       level++;
       document.getElementById("level").textContent = level + 1;
 
-      nilaiBlur = logos[level].blur = Math.min(20, logos[level].blur + 2);
+      nilaiBlur = Math.min(10, logos[level].blur + 2);
+      logos[level].blur = nilaiBlur;
+
       img.src = logos[level].gambar;
       img.onload = () => applyBlur();
     } else {
@@ -112,10 +123,10 @@ function masukkanJawaban() {
 
     skor -= 2;
     tampilkanFeedback("Jawaban Salah! Skor -2 Nyawa -1", "incorrect");
-
     document.getElementById("skor").textContent = skor;
-    nilaiBlur = logos[level].blur = Math.max(10, logos[level].blur - 2);
 
+    nilaiBlur = Math.max(5, logos[level].blur - 1);
+    logos[level].blur = nilaiBlur;
     applyBlur();
 
     document.getElementById("tebakan").value = "";
@@ -123,6 +134,7 @@ function masukkanJawaban() {
 
     if (nyawa === 0) {
       saveHighScore();
+
       document.getElementById("gameover").textContent = "Game Over!";
 
       document.getElementById("canvas").style.display = "none";
@@ -134,6 +146,7 @@ function masukkanJawaban() {
     } else {
       progressGame();
     }
+    updateGame();
   }
 }
 
@@ -161,8 +174,8 @@ function progressGame() {
     currentNyawa: nyawa,
     currentBlur: nilaiBlur,
   };
-  const encodeSession = JSON.stringify(session);
-  localStorage.setItem("session", encodeSession);
+  const encodedSession = JSON.stringify(session);
+  localStorage.setItem("session", encodedSession);
 }
 
 function resetSession() {
@@ -183,14 +196,12 @@ function saveHighScore() {
     localStorage.setItem("highScore", skor.toString());
   }
 
-  const levelUp = level + 1;
-
   if (highLevel === null || level > parseInt(highLevel)) {
-    localStorage.setItem("highLevel", levelUp.toString());
+    localStorage.setItem("highLevel", level.toString());
   }
 
   document.getElementById("high-score").textContent = skor;
-  document.getElementById("high-level").textContent = level + 1;
+  document.getElementById("high-level").textContent = parseInt(level) + 1;
 }
 
 function resetGame() {
@@ -199,11 +210,12 @@ function resetGame() {
     level = 0;
     nyawa = 3;
 
-    resetSession();
-    totalNyawa();
+    logos.forEach((logo) => (logo.blur = 5));
+    img.src = logos[level].gambar;
+    img.onload = () => applyBlur();
 
-    document.getElementById("skor").textContent = skor;
-    document.getElementById("level").textContent = level + 1;
+    resetSession();
+    updateGame();
 
     document.getElementById("champion-gif").style.display = "none";
     canvas.style.display = "block";
@@ -211,8 +223,15 @@ function resetGame() {
     document.getElementById("gameover").textContent = "";
     document.getElementById("winner").textContent = "";
 
-    logos.forEach((logo) => (logo.blur = 5));
+    document.getElementById("skor").textContent = skor;
+    document.getElementById("level").textContent = level + 1;
+
     img.src = logos[level].gambar;
     img.onload = () => applyBlur();
+
+    document.getElementById("tebakan").disabled = false;
+    document.getElementById("tombol").disabled = false;
+    document.getElementById("tebakan").value = "";
+    document.getElementById("tebakan").focus();
   }
 }

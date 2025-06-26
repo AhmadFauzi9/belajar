@@ -1,10 +1,15 @@
 body {
-  font-family: "Verdana", sans-serif;
+  font-family: "Press Start 2P", system-ui;
+  /* font-family: "Rubik", sans-serif; */
+  font-optical-sizing: auto;
+  font-style: normal;
   background: linear-gradient(-35deg, #04616d, #05193f);
   text-align: center;
   padding: 20px;
   border: 0px;
   color: #3d3d3d;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .container-game {

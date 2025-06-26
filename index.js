@@ -1,4 +1,6 @@
-const feedbackMessageDiv = document.getElementById("feedback-message");
+// sudah dideklarasikan secara global
+// dan diinisialisasi dengan DOMContentLoaded di common.js
+// const feedbackMessageDiv = document.getElementById("feedback-message");
 
 let session = loadSession();
 if (session === null) {
@@ -26,18 +28,16 @@ function mulaiGameBaru() {
     return;
   }
 
-  if (playerName !== "") {
-    session = {
-      playerName: playerName,
-      skor: 0,
-      level: 0,
-      nyawa: 3,
-    };
+  session = {
+    playerName: playerName,
+    skor: 0,
+    level: 0,
+    nyawa: 3,
+    nilaiBlur: 5,
+  };
 
-    const encodeSession = JSON.stringify(session);
-    localStorage.setItem("session", encodeSession);
-    document.getElementById("player-name").textContent = playerName;
-  }
+  const encodedSession = JSON.stringify(session);
+  localStorage.setItem("session", encodedSession);
 
   bukaHalamanGame();
 }

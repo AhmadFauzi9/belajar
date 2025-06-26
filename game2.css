@@ -19,17 +19,21 @@
 }
 
 #tebakan {
+  font-family: "Press Start 2P", system-ui;
+  /* font-family: "Rubik", sans-serif; */
   flex: auto;
   outline: none;
   border: none;
-  font-size: 1em;
+  font-size: 0.8em;
   padding: 20px;
 }
 
 #tombol {
+  font-family: "Press Start 2P", system-ui;
+  /* font-family: "Rubik", sans-serif; */
   text-align: center;
-  font-size: 1em;
-  width: 85px;
+  font-size: 0.8em;
+  width: 100px;
   font-weight: bold;
 }
 
@@ -65,15 +69,16 @@ button:hover {
 }
 
 .judul-statistik {
-  font-family: "Noto", serif;
-  font-size: 2em;
+  font-family: "Press Start 2P", system-ui;
+  /* font-family: "Rubik", sans-serif; */
   margin: 30px auto;
   font-weight: lighter;
   color: #f0f0f0;
-  letter-spacing: 0.2em;
 }
 
 #player-name {
+  margin: 0 auto;
+  padding: 5px;
   font-size: 0.7em;
   letter-spacing: normal;
 }
@@ -93,7 +98,7 @@ button:hover {
   width: 40%;
   padding: 10px;
   padding-left: 20px;
-  font-weight: bold;
+  font-size: 0.8em;
 }
 
 .label-statistik .poin {
@@ -138,10 +143,10 @@ button:hover {
   color: #1dce43;
 }
 
-#feedback-message {
+#feedback-messege {
+  font-family: "Rubik", sans-serif;
   display: block;
   width: 550px;
-  font-weight: bold;
   margin: 5px auto;
   padding: 5px;
   border-radius: 15px;
@@ -161,6 +166,24 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
+  #tebakan {
+    font-family: "Press Start 2P", system-ui;
+    /* font-family: "Rubik", sans-serif; */
+    flex: auto;
+    outline: none;
+    border: none;
+    font-size: 0.7em;
+    padding: 20px;
+  }
+
+  #tombol {
+    font-family: "Press Start 2P", system-ui;
+    /* font-family: "Rubik", sans-serif; */
+    text-align: center;
+    font-size: 0.7em;
+    width: 100px;
+    font-weight: bold;
+  }
   .container-game {
     width: 100%;
     margin: 10px auto;
@@ -197,7 +220,7 @@ button:hover {
   }
 
   .label-statistik .label {
-    font-size: 0.8em;
+    font-size: 0.5em;
     text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -207,7 +230,7 @@ button:hover {
   }
 
   .label-statistik .poin {
-    font-size: 2.5em;
+    font-size: 1.5em;
     text-align: center;
     padding: 5px;
     font-style: italic;
@@ -220,5 +243,107 @@ button:hover {
   .nyawa-baris {
     grid-column: 1 / -1;
     flex-direction: column;
+  }
+
+  #feedback-messege {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container-input {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    margin: 15px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  #tebakan {
+    font-family: "Press Start 2P", system-ui;
+    /* font-family: "Rubik", sans-serif; */
+    width: 80%;
+    flex: auto;
+    outline: none;
+    border: none;
+    font-size: 0.7em;
+    padding: 20px;
+  }
+
+  #tombol {
+    font-family: "Press Start 2P", system-ui;
+    /* font-family: "Rubik", sans-serif; */
+    width: 20%;
+    text-align: center;
+    font-size: 0.7em;
+    width: 100px;
+    font-weight: bold;
+  }
+
+  .container-game {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .game-body {
+    display: block;
+  }
+
+  .game-body > div {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .container-statistik {
+    display: block;
+  }
+
+  .judul-statistik {
+    text-align: center;
+    letter-spacing: normal;
+    margin: 10px auto;
+  }
+
+  .label-statistik {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .label-statistik > div {
+    flex-direction: column;
+    padding: 0;
+    margin: 5px;
+  }
+
+  .label-statistik .label {
+    font-size: 0.5em;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .label-statistik .poin {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+    font-style: italic;
+  }
+
+  .label-statistik #nyawa {
+    font-style: normal;
+  }
+
+  .nyawa-baris {
+    grid-column: 1 / -1;
+    flex-direction: column;
+  }
+
+  #feedback-messege {
+    width: 90%;
   }
 }
