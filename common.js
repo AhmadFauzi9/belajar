@@ -1,11 +1,24 @@
+// Konstanta nama properti session
+const SESSION_KEYS = {
+  PLAYER: "namaPlayer",
+  SCORE: "skor",
+  LEVEL: "level",
+  NYAWA: "nyawa",
+  BLUR: "nilaiBlur",
+  SESSION: "session",
+  HIGH_SCORE: "highScore",
+  HIGH_LEVEL: "highLevel",
+};
+
+// Deklarasi secara Global feedbackMessageDiv
 let feedbackMessageDiv;
 document.addEventListener("DOMContentLoaded", () => {
-  feedbackMessageDiv = document.getElementById("feedback-messege");
+  feedbackMessageDiv = document.getElementById("feedback-message");
 });
 
 function tampilkanFeedback(message, type) {
   if (!feedbackMessageDiv) {
-    feedbackMessageDiv = document.getElementById("feedback-messege");
+    feedbackMessageDiv = document.getElementById("feedback-message");
   }
 
   if (feedbackMessageDiv) {

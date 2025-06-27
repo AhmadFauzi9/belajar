@@ -81,6 +81,7 @@ button:hover {
   padding: 5px;
   font-size: 0.7em;
   letter-spacing: normal;
+  color: #292929;
 }
 
 .label-statistik > div {
@@ -143,7 +144,7 @@ button:hover {
   color: #1dce43;
 }
 
-#feedback-messege {
+#feedback-message {
   font-family: "Rubik", sans-serif;
   display: block;
   width: 550px;
@@ -245,7 +246,7 @@ button:hover {
     flex-direction: column;
   }
 
-  #feedback-messege {
+  #feedback-message {
     width: 90%;
   }
 }
@@ -343,7 +344,7 @@ button:hover {
     flex-direction: column;
   }
 
-  #feedback-messege {
+  #feedback-message {
     width: 90%;
   }
 }

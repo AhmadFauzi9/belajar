@@ -2,6 +2,7 @@
   "recommendations": [
     "wallabyjs.quokka-vscode",
     "techer.open-in-browser",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "github.copilot"
   ]
 }

@@ -25,11 +25,16 @@ function mulaiGameBaru() {
   }
 
   session = {
-    [SESSION_KEYS.PLAYER]: playerName,
-    [SESSION_KEYS.SCORE]: 0,
-    [SESSION_KEYS.LEVEL]: 0,
-    [SESSION_KEYS.NYAWA]: 3,
-    [SESSION_KEYS.BLUR]: 5,
+    // playerName: playerName,
+    // skor: 0,
+    // level: 0,
+    // nyawa: 3,
+    // nilaiBlur: 5,
+    currentPlayer: playerName,
+    currentSkor: 0,
+    currentLevel: 0,
+    currentNyawa: 3,
+    currentBlur: 5,
   };
 
   const encodedSession = JSON.stringify(session);
