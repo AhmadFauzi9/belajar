@@ -13,9 +13,16 @@ body {
 }
 
 .container-game {
-  background-image: url("https://images.pexels.com/photos/7130565/pexels-photo-7130565.jpeg");
+  /* background-image: url("https://images.pexels.com/photos/7130565/pexels-photo-7130565.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background: linear-gradient(
+    -30deg,
+    #2faadba2 5%,
+    #13439ecc 40%,
+    #4f23ca91,
+    #7f48e4a1 100%
+  );
   border-radius: 20px;
   overflow: hidden;
   max-width: 900px;
@@ -38,4 +45,31 @@ body {
 
 .game-body > div {
   flex: auto;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #292929;
+  background: linear-gradient(#ffffff, #afafaf);
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background: linear-gradient(#ffffff, #afafaf);
+  color: #666;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background: linear-gradient(#ffffff, #afafaf);
+  color: #666;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background: linear-gradient(#eee, #666);
+  color: #292929;
+  transition: background-color 0.3s ease;
 }

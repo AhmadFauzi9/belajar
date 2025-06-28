@@ -4,35 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="game2.css" />
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Gulzar&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:slnt,wght@-8..0,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Home</title>
   </head>
   <body>
     <div class="container-game">
-      <div class="game-title">HOME</div>
+      <div class="game-title">Home</div>
 
-      <div class="game-body"></div>
-      <div class="option">
-        <div>
-          <button id="continue-game-button" onclick="bukaHalamanGame()">
-            Continue
-          </button>
-
-          <div>Atau main sebagai player baru</div>
-
+      <div class="sub-title">Game Tebak Gambar</div>
+      <div class="game-body">
+        <div class="option">
+          <!-- <div class="player-text">Main sebagai player baru :</div> -->
           <div class="container-new-game">
             <input
               type="text"
               id="player-name-input"
               placeholder="Masukkan nama player"
             />
-
             <button id="mulai-game-button" onclick="mulaiGameBaru()">
               Start
             </button>
+          </div>
+
+          <div class="container-continue" id="container-continue">
+            <div id="continue-text">
+              Masih ada game yang berlajan! Apakah mau lanjut?
+              <!--&nbsp;➜ -->
+            </div>
+            <button id="continue-game-button" onclick="bukaHalamanGame()">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <div class="top-score">
+          <div class="title-top-score">TOP SCORER</div>
+          <div id="top-score-list" class="top-score-list">
+            <!-- tempat mucul topScore.forEach() -->
           </div>
         </div>
       </div>

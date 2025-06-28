@@ -1,0 +1,259 @@
+.game-body {
+  display: block !important;
+}
+
+div .sub-title {
+  color: aliceblue;
+  text-align: center;
+  margin: 30px auto;
+  font-size: 1.2em;
+}
+
+.option {
+  display: block;
+  margin: 15px;
+  margin-top: 0;
+}
+
+.option > div {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8em;
+  margin: 15px auto;
+}
+
+.option .player-text {
+  font-family: "Rubik", sans-serif;
+  font-size: 1em;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+
+.container-new-game {
+  display: flex;
+  height: 35px;
+  font-family: "Rubik", sans-serif;
+  font-size: 1em !important;
+  border-radius: 20px;
+  margin: 5px auto !important;
+}
+
+#player-name-input {
+  border: none;
+  outline: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-left: 15px;
+  font-size: 1em;
+  background: linear-gradient(#afafaf, #eeeded);
+}
+
+#mulai-game-button {
+  flex: auto;
+  border: none;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-size: 1em;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  max-width: 100px;
+}
+
+.container-continue {
+  overflow: hidden;
+  max-width: 550px;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 1em !important;
+  height: 35px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  justify-content: center;
+}
+
+#continue-text {
+  margin: auto;
+  padding: 7px;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+#continue-game-button {
+  flex: auto;
+  font-family: "Rubik", sans-serif;
+  font-size: 1em;
+  height: 35px;
+  width: 20%;
+  max-width: 100px;
+  border-radius: 25px;
+}
+
+#continue-game-button:disabled {
+  height: 35px;
+  border-radius: 25px;
+  background: linear-gradient(#ffffff80, #afafaf78);
+  color: #666;
+  cursor: not-allowed;
+}
+
+.top-score {
+  width: 50%;
+  border-radius: 20px;
+  background-color: #ffffff2d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  font-size: 0.8em;
+  margin: 25px auto 10px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.title-top-score {
+  font-size: 1.2em !important;
+  color: aliceblue !important;
+}
+
+.top-score-list {
+  overflow: hidden;
+  margin: 15px auto;
+  padding: 5px;
+}
+
+.top-score-list > div {
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+.top-score-list .player-name {
+  background-color: aliceblue;
+  width: 50%;
+  text-align: left;
+  padding: 10px;
+  padding-left: 10px;
+}
+
+.top-score-list .player-score {
+  background-color: rgb(219, 218, 218);
+  flex: auto;
+  text-align: left;
+  padding: 10px;
+  padding-left: 20px;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  #player-name-input {
+    font-size: 0.9em;
+  }
+
+  #mulai-game-button {
+    font-size: 0.9em;
+  }
+
+  .container-continue {
+    overflow: hidden;
+    max-width: 700px;
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.9em !important;
+    height: 60px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    justify-content: center;
+  }
+
+  #continue-text {
+    margin: auto;
+    padding: 7px 15px;
+    text-align: center;
+    background-color: aliceblue;
+  }
+
+  #continue-game-button {
+    width: 30%;
+    max-width: 80px;
+    justify-content: center;
+    margin: auto;
+    margin-right: 10px;
+    padding: 0 10px;
+  }
+
+  .top-score {
+    width: 80% !important;
+    border-radius: 20px;
+    background-color: #ffffff2d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+    margin: 25px auto 10px;
+    padding: 20px;
+    padding-bottom: 0;
+    font-size: 0.8em;
+  }
+
+  .title-top-score {
+    font-size: 1.2em !important;
+  }
+
+  .top-score-list {
+    overflow: hidden;
+    margin: 15px auto;
+    padding: 5px;
+  }
+
+  .top-score-list > div {
+    display: flex;
+    background-color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px auto;
+  }
+
+  .top-score-list .player-name {
+    background-color: aliceblue;
+    width: 50%;
+    text-align: left;
+    padding: 10px;
+    padding-left: 10px;
+  }
+
+  .top-score-list .player-score {
+    background-color: rgb(219, 218, 218);
+    flex: auto;
+    text-align: left;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 15px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container-continue {
+    overflow: hidden;
+    max-width: 700px;
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.9em !important;
+    height: 60px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    justify-content: center;
+  }
+
+  #continue-text {
+    margin: auto;
+    padding: 7px 15px;
+    text-align: center;
+    background-color: aliceblue;
+  }
+
+  #continue-game-button {
+    width: 30%;
+    max-width: 80px;
+    justify-content: center;
+    margin: auto;
+    margin-right: 10px;
+    padding: 0 10px;
+  }
+}

@@ -37,51 +37,25 @@
   font-weight: bold;
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: #292929;
-  background: linear-gradient(#ffffff, #afafaf);
-  transition: background-color 0.3s ease;
-}
-
-button:disabled {
-  background: linear-gradient(#ffffff, #afafaf);
-  color: #666;
-  cursor: not-allowed;
-}
-
-button:disabled:hover {
-  background: linear-gradient(#ffffff, #afafaf);
-  color: #666;
-  cursor: not-allowed;
-}
-
-button:hover {
-  background: linear-gradient(#eee, #666);
-  color: #292929;
-  transition: background-color 0.3s ease;
-}
-
 .container-statistik {
   width: 40%;
 }
 
 .judul-statistik {
-  font-family: "Press Start 2P", system-ui;
-  /* font-family: "Rubik", sans-serif; */
+  font-family: "Rubik", sans-serif;
   margin: 30px auto;
   font-weight: lighter;
   color: #f0f0f0;
+  letter-spacing: 0.2em;
 }
 
 #player-name {
-  margin: 0 auto;
+  font-family: "Press Start 2P", system-ui;
+  margin: 5px auto 0;
   padding: 5px;
-  font-size: 0.7em;
+  font-size: 2.5em;
   letter-spacing: normal;
-  color: #292929;
+  color: #00ff73;
 }
 
 .label-statistik > div {
@@ -100,6 +74,7 @@ button:hover {
   padding: 10px;
   padding-left: 20px;
   font-size: 0.8em;
+  margin: auto;
 }
 
 .label-statistik .poin {
@@ -120,12 +95,11 @@ button:hover {
 
 #gameover,
 #winner {
-  font-size: 3em;
   font-weight: bold;
   font-style: italic;
   text-align: center;
   text-transform: uppercase;
-  margin: 10px auto;
+  font-size: 3em;
 }
 
 #champion-gif {
@@ -138,16 +112,29 @@ button:hover {
 
 #gameover {
   color: #ce1d1d;
+  margin: 70px 10px !important;
+  line-height: 1.5em;
 }
 
 #winner {
   color: #1dce43;
+  margin: 10px 10px !important;
 }
 
 #feedback-message {
   font-family: "Rubik", sans-serif;
-  display: block;
   width: 550px;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: none;
+}
+
+#gameover-feedback {
+  font-family: "Rubik", sans-serif;
+  width: 450px;
   margin: 5px auto;
   padding: 5px;
   border-radius: 15px;
@@ -246,7 +233,8 @@ button:hover {
     flex-direction: column;
   }
 
-  #feedback-message {
+  #feedback-message,
+  #gameover-feedback {
     width: 90%;
   }
 }
@@ -344,7 +332,8 @@ button:hover {
     flex-direction: column;
   }
 
-  #feedback-message {
+  #feedback-message,
+  #gameover-feedback {
     width: 90%;
   }
 }

@@ -92,7 +92,7 @@ function masukkanJawaban() {
 
   if (tebakan === logos[level].nama) {
     skor += 10;
-    tampilkanFeedback("Jawaban Benar! Skor +10", "correct");
+    tampilkanFeedback("✅ Jawaban Benar! Skor +10", "correct");
 
     document.getElementById("skor").textContent = skor;
     document.getElementById("tebakan").value = "";
@@ -125,6 +125,8 @@ function masukkanJawaban() {
 
       setTimeout(() => {
         document.getElementById("winner").textContent = "WINNER!";
+        document.getElementById("winner").style.display = "block";
+
         document.getElementById("canvas").style.display = "none";
         document.getElementById("champion-gif").style.display = "block";
 
@@ -140,7 +142,7 @@ function masukkanJawaban() {
     totalNyawa();
 
     skor -= 2;
-    tampilkanFeedback("Jawaban Salah! Skor -2 Nyawa -1", "incorrect");
+    tampilkanFeedback("❎ Jawaban Salah! Skor -2 Nyawa -1", "incorrect");
     document.getElementById("skor").textContent = skor;
 
     nilaiBlur = Math.max(5, logos[level].blur - 1);
@@ -158,6 +160,7 @@ function masukkanJawaban() {
       saveHighScore();
 
       document.getElementById("gameover").textContent = "Game Over!";
+      document.getElementById("gameover").style.display = "block";
 
       document.getElementById("canvas").style.display = "none";
       document.getElementById("tebakan").disabled = true;
@@ -166,12 +169,12 @@ function masukkanJawaban() {
       resetSession();
 
       setTimeout(() => {
-        alert("Game Over! Kembali ke halaman utama dalam 3 detik!");
-        // tampilkanFeedback("Kembali ke halaman utama dalam 3 detik!", "incorrect");
-        setTimeout(() => {
-          window.location.replace("index.html");
-        }, 3000);
-      }, 2000);
+        feedbackGameover(
+          "Kembali ke halaman utama dalam 3 detik!",
+          "incorrect"
+        );
+        backTohome();
+      }, 1000);
     } else {
       progressGame();
     }
@@ -232,6 +235,22 @@ function saveHighScore() {
 
   document.getElementById("high-score").textContent = skor;
   document.getElementById("high-level").textContent = parseInt(level) + 1;
+
+  let encodeTopScore = localStorage.getItem(SESSION_KEYS.TOP_SCORE);
+
+  let topScore = [];
+  if (encodeTopScore !== null) {
+    topScore = JSON.parse(encodeTopScore);
+  }
+
+  topScore.push({
+    [SESSION_KEYS.PLAYER]: playerName,
+    [SESSION_KEYS.SCORE]: skor,
+  });
+
+  encodeTopScore = JSON.stringify(topScore);
+
+  localStorage.setItem(SESSION_KEYS.TOP_SCORE, encodeTopScore);
 }
 
 function resetGame() {
@@ -265,4 +284,10 @@ function resetGame() {
     document.getElementById("tebakan").value = "";
     document.getElementById("tebakan").focus();
   }
+}
+
+function backTohome(delay = 3000) {
+  setTimeout(() => {
+    window.location.replace("index.html");
+  }, delay);
 }
