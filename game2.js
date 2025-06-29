@@ -43,25 +43,29 @@ let nyawa = 3;
 let nilaiBlur = 5;
 let playerName = "";
 
-const session = loadSession();
-if (session !== null) {
-  playerName = session[SESSION_KEYS.PLAYER];
-  skor = session[SESSION_KEYS.SCORE];
-  level = session[SESSION_KEYS.LEVEL];
-  nyawa = session[SESSION_KEYS.NYAWA];
-  nilaiBlur = session[SESSION_KEYS.BLUR];
-  logos[level].blur = nilaiBlur;
+document.addEventListener("DOMContentLoaded", () => {
+  const session = loadSession();
+  if (session !== null) {
+    playerName = session[SESSION_KEYS.PLAYER];
+    skor = session[SESSION_KEYS.SCORE];
+    level = session[SESSION_KEYS.LEVEL];
+    nyawa = session[SESSION_KEYS.NYAWA];
+    nilaiBlur = session[SESSION_KEYS.BLUR];
+    logos[level].blur = nilaiBlur;
 
-  document.getElementById("player-name").textContent = playerName;
+    document.getElementById("player-name").textContent = playerName;
 
-  console.log("nilai blur", logos[level].blur, "=", typeof logos[level].blur);
-  console.log(
-    "level dari session:",
-    session[SESSION_KEYS.LEVEL],
-    " | jumlah logo:",
-    logos.length
-  );
-}
+    console.log("nilai blur", logos[level].blur, "=", typeof logos[level].blur);
+    console.log(
+      "level dari session:",
+      session[SESSION_KEYS.LEVEL],
+      " | jumlah logo:",
+      logos.length
+    );
+  } else {
+    window.location.replace("index.html");
+  }
+});
 
 const highScore = localStorage.getItem(SESSION_KEYS.HIGH_SCORE);
 const highLevel = localStorage.getItem(SESSION_KEYS.HIGH_LEVEL);

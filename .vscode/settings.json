@@ -1,7 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "fiveServer.ignore": [
-    
-
-  ]
+  "fiveServer.ignore": [],
+  "editor.wordWrap": "on"
 }

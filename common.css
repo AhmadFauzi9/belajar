@@ -13,9 +13,6 @@ body {
 }
 
 .container-game {
-  /* background-image: url("https://images.pexels.com/photos/7130565/pexels-photo-7130565.jpeg");
-  background-size: cover;
-  background-position: center; */
   background: linear-gradient(
     -30deg,
     #2faadba2 5%,

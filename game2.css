@@ -19,20 +19,21 @@
 }
 
 #tebakan {
-  font-family: "Press Start 2P", system-ui;
-  /* font-family: "Rubik", sans-serif; */
+  /* font-family: "Press Start 2P", system-ui; */
+  font-family: "Rubik", sans-serif;
+  font-size: 1em !important;
   flex: auto;
   outline: none;
   border: none;
   font-size: 0.8em;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 #tombol {
-  font-family: "Press Start 2P", system-ui;
-  /* font-family: "Rubik", sans-serif; */
+  /* font-family: "Press Start 2P", system-ui; */
+  font-family: "Rubik", sans-serif;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 1em;
   width: 100px;
   font-weight: bold;
 }
@@ -43,7 +44,7 @@
 
 .judul-statistik {
   font-family: "Rubik", sans-serif;
-  margin: 30px auto;
+  margin: 20px auto;
   font-weight: lighter;
   color: #f0f0f0;
   letter-spacing: 0.2em;
@@ -53,9 +54,9 @@
   font-family: "Press Start 2P", system-ui;
   margin: 5px auto 0;
   padding: 5px;
-  font-size: 2.5em;
   letter-spacing: normal;
   color: #00ff73;
+  font-size: calc(1vw + 0.5em); /* Ukuran font yang dinamis */
 }
 
 .label-statistik > div {
@@ -70,22 +71,27 @@
 
 .label-statistik .label {
   background-color: #f0f0f0;
-  width: 40%;
+  width: 50%;
   padding: 10px;
   padding-left: 20px;
   font-size: 0.8em;
+  font-size: calc(1vh + 0.3em);
+  line-height: 1.2em;
   margin: auto;
 }
 
 .label-statistik .poin {
   flex: auto;
+  width: 20%;
+  height: fit-content;
   background-color: #cecece;
-  padding: 10px;
-  padding-left: 15px;
+  padding: 15px;
   color: #019e23;
-  font-size: 1.2em;
+  font-size: calc(2vh, 1.2em);
   font-weight: bold;
   border-radius: 25px;
+  margin: auto;
+  text-align: center;
 }
 
 .label-statistik #high-score,
@@ -155,8 +161,9 @@
 
 @media only screen and (max-width: 600px) {
   #tebakan {
-    font-family: "Press Start 2P", system-ui;
-    /* font-family: "Rubik", sans-serif; */
+    /* font-family: "Press Start 2P", system-ui; */
+    font-family: "Rubik", sans-serif;
+    font-size: 1em !important;
     flex: auto;
     outline: none;
     border: none;
@@ -165,8 +172,9 @@
   }
 
   #tombol {
-    font-family: "Press Start 2P", system-ui;
-    /* font-family: "Rubik", sans-serif; */
+    /* font-family: "Press Start 2P", system-ui; */
+    font-family: "Rubik", sans-serif;
+    font-size: 1em !important;
     text-align: center;
     font-size: 0.7em;
     width: 100px;
@@ -194,6 +202,7 @@
     text-align: center;
     letter-spacing: normal;
     margin: 10px auto;
+    font-size: 1.2em;
   }
 
   .label-statistik {
@@ -201,14 +210,21 @@
     grid-template-columns: 1fr 1fr;
     width: 100%;
   }
+
   .label-statistik > div {
     flex-direction: column;
     padding: 0;
     margin: 5px;
   }
 
+  #player-name {
+    letter-spacing: normal;
+    color: #00ff73;
+    font-size: calc(1vh + 0.5em);
+  }
+
   .label-statistik .label {
-    font-size: 0.5em;
+    font-size: 0.7em;
     text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -218,10 +234,14 @@
   }
 
   .label-statistik .poin {
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
-    padding: 5px;
+    padding: 10px 0;
     font-style: italic;
+    flex: auto;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: center;
   }
 
   .label-statistik #nyawa {
@@ -251,8 +271,8 @@
   }
 
   #tebakan {
-    font-family: "Press Start 2P", system-ui;
-    /* font-family: "Rubik", sans-serif; */
+    /* font-family: "Press Start 2P", system-ui; */
+    font-family: "Rubik", sans-serif;
     width: 80%;
     flex: auto;
     outline: none;
@@ -262,8 +282,8 @@
   }
 
   #tombol {
-    font-family: "Press Start 2P", system-ui;
-    /* font-family: "Rubik", sans-serif; */
+    /* font-family: "Press Start 2P", system-ui; */
+    font-family: "Rubik", sans-serif;
     width: 20%;
     text-align: center;
     font-size: 0.7em;

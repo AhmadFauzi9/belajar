@@ -97,14 +97,13 @@ div .sub-title {
 }
 
 .top-score {
-  width: 50%;
+  width: 60%;
   border-radius: 20px;
   background-color: #ffffff2d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   font-size: 0.8em;
-  margin: 25px auto 10px;
-  padding: 20px;
-  padding-bottom: 0;
+  margin: 25px auto 25px;
+  padding: 20px 30px 10px;
 }
 
 .title-top-score {
@@ -114,34 +113,70 @@ div .sub-title {
 
 .top-score-list {
   overflow: hidden;
-  margin: 15px auto;
-  padding: 5px;
+  margin: 10px auto 10px;
+  padding: 0 20px;
 }
 
 .top-score-list > div {
   display: flex;
   background-color: aliceblue;
-  border-radius: 15px;
+  border-radius: 25px;
   overflow: hidden;
   margin: 10px auto;
 }
 
 .top-score-list .player-name {
-  background-color: aliceblue;
-  width: 50%;
+  width: 70%;
   text-align: left;
-  padding: 10px;
-  padding-left: 10px;
+  margin: auto 5px;
+  font-size: calc(1vh + 0.5em);
+  padding: 0 0 2px 5px;
 }
 
 .top-score-list .player-score {
-  background-color: rgb(219, 218, 218);
+  width: 20%;
+  background-color: #b7b7b7;
+  color: #292929;
   flex: auto;
-  text-align: left;
+  text-align: center;
   padding: 10px;
-  padding-left: 20px;
-  border-radius: 15px;
+  border-radius: 25px;
+  margin: auto 5px;
+  margin-right: 0;
 }
+
+.medal,
+.medal-one {
+  font-size: 1.3em;
+  transform: scale(1.1);
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2px 2px 8px;
+  margin: auto;
+}
+
+/* TOP SKOR 1 //////////////////////////////////////*/
+.top-one {
+  background-color: gold !important;
+  padding: 3px 0;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-size: calc(1vh + 0.5em);
+}
+
+.top-score-list > .top-one .player-name {
+  color: #292929;
+  font-size: calc(1vh + 0.5em);
+  margin: auto 5px;
+}
+
+.top-score-list > .top-one .player-score {
+  background-color: #b2840f;
+  color: aliceblue;
+  font-size: 1.5em;
+  margin: auto 4px;
+}
+/* TOP SKOR 1 //////////////////////////////////////*/
 
 @media only screen and (max-width: 600px) {
   #player-name-input {
@@ -204,15 +239,13 @@ div .sub-title {
 
   .top-score-list > div {
     display: flex;
-    background-color: aliceblue;
-    border-radius: 15px;
+    border-radius: 30px;
     overflow: hidden;
     margin: 10px auto;
   }
 
   .top-score-list .player-name {
-    background-color: aliceblue;
-    width: 50%;
+    width: 60%;
     text-align: left;
     padding: 10px;
     padding-left: 10px;
@@ -221,26 +254,41 @@ div .sub-title {
   .top-score-list .player-score {
     background-color: rgb(219, 218, 218);
     flex: auto;
-    text-align: left;
+    text-align: center;
     padding: 10px;
-    padding-left: 20px;
     border-radius: 15px;
+    margin: auto 5px;
+  }
+
+  .top-score-list > .top-one .player-score {
+    flex: auto;
+    border-radius: 30px;
+  }
+
+  /* TOP SKOR 1 //////////////////////////////////////*/
+  .top-one {
+    background-color: gold !important;
+    padding: 3px 0;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: calc(1vh + 0.5em);
+  }
+
+  .top-score-list > .top-one .player-name {
+    color: #292929;
+    font-size: calc(1vh + 0.5em);
+    margin: auto 5px;
+  }
+
+  .top-score-list > .top-one .player-score {
+    background-color: #b2840f;
+    color: aliceblue;
+    font-size: 1.5em;
+    margin: auto 5px;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .container-continue {
-    overflow: hidden;
-    max-width: 700px;
-    width: 100%;
-    font-family: "Rubik", sans-serif;
-    font-size: 0.9em !important;
-    height: 60px;
-    border-radius: 20px;
-    background-color: aliceblue;
-    justify-content: center;
-  }
-
   #continue-text {
     margin: auto;
     padding: 7px 15px;
@@ -255,5 +303,62 @@ div .sub-title {
     margin: auto;
     margin-right: 10px;
     padding: 0 10px;
+  }
+
+  .top-score-list > div {
+    border-radius: 20px;
+  }
+
+  .top-one {
+    border-radius: 50px !important;
+  }
+
+  .top-score {
+    width: 80% !important;
+    border-radius: 20px;
+    background-color: #ffffff2d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+    margin: 25px auto 10px;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+
+  .top-score-list .player-name {
+    width: 60%;
+    text-align: left;
+    padding: 10px;
+    padding-left: 10px;
+    font-size: 1.2vh !important;
+  }
+
+  .top-score-list .player-score {
+    background-color: rgb(219, 218, 218);
+    flex: auto;
+    text-align: left;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 15px;
+  }
+
+  .top-score-list > .top-one .player-score {
+    flex: auto;
+    padding-left: 15px;
+    margin: auto 4px 0 !important;
+    border-radius: 20px !important;
+  }
+
+  .medal-one {
+    margin: auto 5px !important;
+    padding: 4px 4px 8px !important;
+    font-size: 1.8vh;
+  }
+
+  .medal,
+  .medal-one {
+    transform: none !important;
+    background-color: none !important;
+    padding: none !important;
+    margin: auto !important;
   }
 }

@@ -1,25 +1,65 @@
 const topScore = loadTopScore();
-
 if (topScore !== null) {
   const topScoreDiv = document.getElementById("top-score-list");
 
-  topScore.sort(function (a, b) {
-    return b[SESSION_KEYS.SCORE] - a[SESSION_KEYS.SCORE];
+  const namaPlayerUnik = [];
+
+  topScore.forEach((player) => {
+    nama = player[SESSION_KEYS.PLAYER];
+    skorPlayer = player[SESSION_KEYS.SCORE];
+
+    if (
+      !namaPlayerUnik[nama] ||
+      skorPlayer > namaPlayerUnik[nama][SESSION_KEYS.SCORE]
+    ) {
+      namaPlayerUnik[nama] = player;
+    }
   });
 
-  topScore.forEach(function (player) {
-    const row =
-      "<div>" +
-      "<div class='player-name'>" +
-      player[SESSION_KEYS.PLAYER] +
-      "</div>" +
-      "<div class='player-score'>" +
-      player[SESSION_KEYS.SCORE] +
-      "</div>" +
-      "</div>";
-    console.log("NYAWA = ", player[SESSION_KEYS.LEVEL]);
-    topScoreDiv.insertAdjacentHTML("beforeend", row);
-  });
+  const topScoreUnik = Object.values(namaPlayerUnik);
+
+  // topScore
+  topScoreUnik
+    .sort(function (a, b) {
+      return b[SESSION_KEYS.SCORE] - a[SESSION_KEYS.SCORE];
+    })
+    .slice(0, 5)
+    .forEach(function (player, peringkatScore) {
+      let className = "";
+      let medal = "";
+
+      if (peringkatScore === 0) {
+        //jika peringkatScore === indeks ke 0(peringkat tertinggi) maka set className
+        className = "top-one";
+        medal = "<span class='medal-one'>🥇</span> ";
+      } else if (peringkatScore === 1) {
+        className = "top-two";
+        medal = "<span class='medal'>🥈</span> ";
+      } else if (peringkatScore === 2) {
+        className = "top-three";
+        medal = "<span class='medal'>🥉</span> ";
+      } else if (peringkatScore === 3) {
+        className = "top-four";
+        medal = "<span class='medal'>🏅</span> ";
+      } else if (peringkatScore === 4) {
+        className = "top-five";
+        medal = "<span class='medal'>🏅</span> ";
+      }
+
+      const row =
+        "<div class='" +
+        className +
+        "'>" +
+        "<div class='player-name'>" +
+        medal +
+        player[SESSION_KEYS.PLAYER] +
+        "</div>" +
+        "<div class='player-score'>" +
+        player[SESSION_KEYS.SCORE] +
+        "</div>" +
+        "</div>";
+      topScoreDiv.insertAdjacentHTML("beforeend", row);
+    });
 }
 
 let session = null;
@@ -37,6 +77,18 @@ function bukaHalamanGame() {
 }
 
 function mulaiGameBaru() {
+  const inputan = document.getElementById("player-name-input");
+  const klik = document.getElementById("mulai-game-button");
+
+  if (inputan.value.length > 10) {
+    tampilkanFeedback(
+      "Maksimal 10 karakter, termasuk spasi, angka, & simbol",
+      "incorrect"
+    );
+    return;
+  }
+
+  const session = loadSession();
   if (session !== null) {
     const confirmationMessege =
       "Game sebelumnya masih berjalan! Yakin mau mulai game baru?";
