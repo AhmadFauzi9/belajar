@@ -62,11 +62,11 @@ if (topScore !== null) {
     });
 }
 
-let session = null;
+let sessionRuningGame;
 document.addEventListener("DOMContentLoaded", () => {
-  const session = loadSession();
+  sessionRuningGame = loadSession();
 
-  if (session === null) {
+  if (sessionRuningGame === null) {
     document.getElementById("continue-game-button").disabled = true;
     document.getElementById("container-continue").style.display = "none";
   }
@@ -78,7 +78,6 @@ function bukaHalamanGame() {
 
 function mulaiGameBaru() {
   const inputan = document.getElementById("player-name-input");
-  const klik = document.getElementById("mulai-game-button");
 
   if (inputan.value.length > 10) {
     tampilkanFeedback(
@@ -88,7 +87,7 @@ function mulaiGameBaru() {
     return;
   }
 
-  const session = loadSession();
+  let session = loadSession();
   if (session !== null) {
     const confirmationMessege =
       "Game sebelumnya masih berjalan! Yakin mau mulai game baru?";
