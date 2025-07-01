@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   feedbackMessageDiv = document.getElementById("feedback-message");
 });
 
-function tampilkanFeedback(message, type) {
+function tampilkanFeedback(message, type){
   if (!feedbackMessageDiv) {
     feedbackMessageDiv = document.getElementById("feedback-message");
   }
