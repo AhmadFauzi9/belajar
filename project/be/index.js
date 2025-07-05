@@ -1,7 +1,11 @@
 //const express = require("express");
 import express from "express";
+import bodyParser from "body-parser";
+
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.json());
 
 const logos = [
   {
@@ -35,9 +39,50 @@ app.get("/", (req, res) => {
   res.send("Hello Coy oke!");
 });
 
+// nampilin list logos
 app.get("/logos", (req, res) => {
-  console.log(req);
-  res.json(logos.map((item)=> item.gambar));
+  console.log(req.ip);
+  res.json(logos.map((item) => item.gambar));
+});
+
+// post untuk nambah baru
+app.post("/", (req, res)=>{
+  logos.push({nama: req.body.nama,
+    gambar: req.body.gambar
+  });
+
+  res.json({
+    error: nul,
+  });
+});
+
+// Put untuk edit
+app.put("/logos/:nama", (req, res) => {
+   const index = logos.findIndex((item) => item.nama === item.params.nama);
+
+   logos[index].gambar = req.body.gambar;
+
+   res.json({
+    indexItem : index,
+    error: null
+   })
+});
+
+// delete untuk menghapus
+app.delete("/logos/:nama", (req, res) => {
+   const index = logos.findIndex((item) => item.nama === item.params.nama);
+
+   if (index === -1) {
+    res.json({
+      error: "tidak ditemukan"
+    })
+   }
+   logos.splice(index, 1);
+
+   res.json({
+    indexItem : index,
+    error: null
+   })
 })
 
 app.listen(port, () => {
